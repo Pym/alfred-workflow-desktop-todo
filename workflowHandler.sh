@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This file is not from me (@Pym) but from @markokaestner:
+# https://github.com/markokaestner/bash-workflow-handler
+
 VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
 NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
 
