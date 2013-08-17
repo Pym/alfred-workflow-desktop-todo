@@ -86,7 +86,7 @@ touch ~/Desktop/"{query}"
 				<integer>127</integer>
 				<key>script</key>
 				<string>set -e
-rm ~/Desktop/{query}
+rm ~/Desktop/"{query}"
 </string>
 				<key>type</key>
 				<integer>0</integer>
