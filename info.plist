@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>22986ED1-08D9-4991-978A-FD3FDD4DF628</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C020CDB6-0EEB-4C52-ACC2-D987FC0BE10D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6B04DFA3-F85D-4B87-9DD9-2375A242E4F2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Pym</string>
+	<key>description</key>
+	<string>A todo list for your desktop</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Desktop Todo</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>script</key>
+				<string>set -e
+touch ~/Desktop/"{query}"
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6B04DFA3-F85D-4B87-9DD9-2375A242E4F2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>t</string>
+				<key>subtext</key>
+				<string>Add item "{query}" to your desktop's todo list</string>
+				<key>text</key>
+				<string>Add a todo</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B11B132B-4A61-4C05-8F4F-2111F454E6C6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>script</key>
+				<string>set -e
+rm ~/Desktop/{query}
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C020CDB6-0EEB-4C52-ACC2-D987FC0BE10D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>d</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+cd ~/Desktop
+
+while read -r file; do
+  addResult "$file" "$file" "$file" "Delete item \"$file\" from your desktop's todo list" "remove.png" "yes" "$file"
+done &lt; &lt;(find . -type f ! -name "*.*" -exec basename {} \;)
+
+getXMLResults
+</string>
+				<key>subtext</key>
+				<string>Delete an item from your desktop's todo list</string>
+				<key>title</key>
+				<string>Delete a todo</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>22986ED1-08D9-4991-978A-FD3FDD4DF628</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>22986ED1-08D9-4991-978A-FD3FDD4DF628</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>6B04DFA3-F85D-4B87-9DD9-2375A242E4F2</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>C020CDB6-0EEB-4C52-ACC2-D987FC0BE10D</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/Pym</string>
+</dict>
+</plist>
