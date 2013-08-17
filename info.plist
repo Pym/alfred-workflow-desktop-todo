@@ -114,7 +114,7 @@ cd ~/Desktop
 
 while read -r file; do
   addResult "$file" "$file" "$file" "Delete item \"$file\" from your desktop's todo list" "remove.png" "yes" "$file"
-done &lt; &lt;(find . -type f ! -name "*.*" -exec basename {} \;)
+done &lt; &lt;(find . -type f -size 0 ! -name "*.*" -exec basename {} \;)
 
 getXMLResults
 </string>
