@@ -83,7 +83,7 @@ touch ~/Desktop/"{query}"
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>126</integer>
 				<key>script</key>
 				<string>set -e
 rm ~/Desktop/"{query}"
