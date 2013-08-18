@@ -46,7 +46,21 @@
 				<integer>126</integer>
 				<key>script</key>
 				<string>set -e
-touch ~/Desktop/"{query}"
+
+ARGS=({query}) # $@
+
+if [[ ${ARGS[0]} == "-c"* ]]; then
+  COLOR=${ARGS[0]:2}
+  ARGS=(${ARGS[*]:1}) # shift $@
+fi
+
+FILE=~/Desktop/${ARGS[*]}
+
+touch "$FILE"
+
+if [[ ! -z $COLOR ]]; then
+  osascript -e "tell app \"Finder\" to set label index of alias POSIX file \"$FILE\" to $COLOR"
+fi
 </string>
 				<key>type</key>
 				<integer>0</integer>

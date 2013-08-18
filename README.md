@@ -8,10 +8,34 @@ Desktop Todo allow you to create/delete empty items on your desktop from Alfred.
 
 ## Usage
 
-### Create a todo
+### Create a simple todo
 
-`t my todo item` will create an empty `my todo item` file on `~/Desktop`.
+Open Alfred and type:
+
+    t my todo item
+
+will create an empty `my todo item` file on `~/Desktop`.
+
+### Create a colorful todo
+
+Adding the `-c` parameter followed by a color number (see below) will set the 'Label' of the file, just as you can do with the Finder.
+
+    t -c2 my important todo item
+
+will create an empty `my important todo item` file on `~/Desktop` labeled in red.
+
+Available colors are:
+
+1.  Orange
+2.  Red
+3.  Yellow
+4.  Blue
+5.  Purple
+6.  Green
+7.  Gray
 
 ### Delete a todo
 
-`d ` will list you files without extension (assumed as todo items) from `~/Desktop`.
+Open Alfred and type `d` followed by a space will list you empty files without extension (assumed as todo items) from `~/Desktop`.
+
+Selecting one and pressing `Enter` will delete it.
