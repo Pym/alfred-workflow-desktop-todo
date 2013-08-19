@@ -47,14 +47,14 @@
 				<key>script</key>
 				<string>set -e
 
-ARGS=({query}) # $@
+ARGS="{query}"
 
-if [[ ${ARGS[0]} == "-c"* ]]; then
-  COLOR=${ARGS[0]:2}
-  ARGS=(${ARGS[*]:1}) # shift $@
+if [[ $ARGS =~ \-c[0-7][[:blank:]].+ ]]; then
+  COLOR=${ARGS:2:1}
+  ARGS=${ARGS:4}
 fi
 
-FILE=~/Desktop/${ARGS[*]}
+FILE=~/Desktop/$ARGS
 
 touch "$FILE"
 
