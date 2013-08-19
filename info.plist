@@ -121,6 +121,8 @@ rm ~/Desktop/"{query}"
 				<integer>127</integer>
 				<key>keyword</key>
 				<string>d</string>
+				<key>runningsubtext</key>
+				<string>Retrieving todos...</string>
 				<key>script</key>
 				<string>. workflowHandler.sh
 
