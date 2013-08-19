@@ -131,7 +131,7 @@ cd ~/Desktop
 while read -r file; do
   COLOR=`mdls -name kMDItemFSLabel -raw "$file"`
   addResult "$file" "$file" "$file" "Delete item \"$file\" from your desktop's todo list" "remove${COLOR}.png" "yes" ""
-done &lt; &lt;(find . -type f -size 0 -iname "*{query}*" ! -name "*.*" -exec basename {} \;)
+done &lt; &lt;(find . -maxdepth 1 -type f -size 0 -iname "*{query}*" ! -name "*.*" -exec basename {} \;)
 
 getXMLResults
 </string>
