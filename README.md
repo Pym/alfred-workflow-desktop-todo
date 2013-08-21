@@ -4,7 +4,7 @@ This is an Alfred Workflow inspired by an [@holman's idea](https://github.com/ho
 
 > All `todo` does is put a file on my Desktop with the filename given. That's it. I aggressively prune my desktop of old tasks and keep one or two on there at a time. Once I've finished a todo, I just delete the file. That's it.
 
-Desktop Todo allow you to create/delete empty items on your desktop from Alfred. That's it.
+Desktop Todo allows you to create/delete empty items on your desktop from Alfred. That's it.
 
 ## Usage
 
